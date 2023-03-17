@@ -1,0 +1,15 @@
+Fri Mar 17 10:11:38.755 2023 : CtMain::main processing for command=h 
+Fri Mar 17 10:11:38.760 2023 : Entering MWCliRootCp::process ver=007.1804.0000.0000 Apr 09, 2021 copyright=2021
+Fri Mar 17 10:11:38.760 2023 : Entering HelpCp::process 
+Fri Mar 17 10:11:38.761 2023 : MWCliRootCp::process processed for subtokenID=1 errorCode=0
+Fri Mar 17 10:11:38.761 2023 : Entering MWCliRootCp::handleOuput retCode=0, DriveFull=0
+Fri Mar 17 10:11:38.761 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 10:11:38.784 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 10:11:38.784 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 10:11:38.788 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 10:11:38.788 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 10:11:38.788 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 10:11:38.788 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 10:11:38.788 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 10:11:38.788 2023 : CtMain::main command completed with retcode=0
+
