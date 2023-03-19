@@ -12,7 +12,7 @@
 #include <sched.h>
 
 #define DEBUG 1
-#define SINGLE 1
+#define SINGLE 0
 
 #define MEMBUF_SIZE 1024*1024*1024  //分配的内存大小
 #define NUM_FOR 1000   //循环测试次数
@@ -80,7 +80,7 @@ void *new_func(void *para)
     int th_fd;
     char th_path[50];
     sprintf(th_path, "./mnt/%d",ptr->icore+1);
-    if( (th_fd = open(th_path, O_RDWR))< 0){ 
+    if( (th_fd = open(th_path, O_RDWR|O_DIRECT))< 0){ 
         printf("th_open %dth failed \n",ptr->icore+1);
         exit(0);
     }
@@ -102,12 +102,12 @@ void *new_func(void *para)
     gettimeofday(&start, NULL);
     for(int i=0;i<NUM_FOR;i++)
     {
-        int ret = pwrite(th_fd,thbuf,ptr->io_size,0+i*ptr->io_size);//写到pagecache，用户态请求到pagecache
+        int ret = pread(th_fd,thbuf,ptr->io_size,0+i*ptr->io_size);//写到pagecache，用户态请求到pagecache
         if(ret<0) 
         {
             printf("th_pwrite faild\n");
         }
-        fsync(th_fd);//刷回到盘，pagecache到盘
+        //fsync(th_fd);//刷回到盘，pagecache到盘
     }
     gettimeofday(&end, NULL);
     int th_speedtime = (end.tv_sec * 1000000 + end.tv_usec) - (start.tv_sec * 1000000 + start.tv_usec);
@@ -149,7 +149,7 @@ void Single_test(int threads, int io_size)
     memset(numa_membuf, 0, MEMBUF_SIZE);//初始化，避免缺页中断影响
     int fd;
     //if( (fd=open("/dev/sdf", O_RDWR|O_DIRECT|O_SYNC))< 0){  //BLOCK测试
-    if( (fd=open("./mnt/0", O_RDWR))< 0){ 
+    if( (fd=open("./mnt/0", O_RDWR|O_DIRECT))< 0){ 
         exit(0);
     }
     struct timeval start1,end1;
@@ -158,12 +158,12 @@ void Single_test(int threads, int io_size)
     gettimeofday(&start1, NULL);
     for(int i=0;i<NUM_FOR;i++)
     {
-        int ret = pwrite(fd,numa_membuf,io_size,0+i*io_size);//写到pagecache，用户态请求到pagecache
+        int ret = pread(fd,numa_membuf,io_size,0+i*io_size);//写到pagecache，用户态请求到pagecache
         if(ret<0) 
         {
             printf("single pwrite faild\n");
         }
-        fsync(fd);//刷回到盘，pagecache到盘
+        //fsync(fd);//刷回到盘，pagecache到盘
     }
     gettimeofday(&end1, NULL);
     int speedtime = (end1.tv_sec * 1000000 + end1.tv_usec) - (start1.tv_sec * 1000000 + start1.tv_usec);
