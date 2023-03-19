@@ -13,3 +13,384 @@ Fri Mar 17 10:11:38.788 2023 : StorelibItDp::processLibCommand SL request sent
 Fri Mar 17 10:11:38.788 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
 Fri Mar 17 10:11:38.788 2023 : CtMain::main command completed with retcode=0
 
+Fri Mar 17 22:52:34.521 2023 : CtMain::main processing for command=/ c 0 show 
+Fri Mar 17 22:52:34.521 2023 : Entering LinuxControllerExplorer::explore 
+Fri Mar 17 22:52:34.521 2023 : Entering LinuxControllerExplorer::getCtrlCount
+Fri Mar 17 22:52:34.521 2023 : LinuxControllerExplorer::getCtrlCount _hDvr=-1 _hDvrSwr =-1
+Fri Mar 17 22:52:34.521 2023 : LinuxControllerExplorer::explore ctrlCount=1
+Fri Mar 17 22:52:34.521 2023 : returning LinuxControllerExplorer::explore ctrlIdListPtr
+Fri Mar 17 22:52:34.521 2023 : SlItControllerExplorer::explore - Entering
+Fri Mar 17 22:52:34.521 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.522 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.522 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.522 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.522 2023 : SlItControllerExplorer::explore - Getting the StoreLIB instance for SAS3.5 IT controller
+Fri Mar 17 22:52:34.522 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.544 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.544 2023 : SlItControllerExplorer::explore - Issuing SL_GET_CTRL_LIST to SLIT
+Fri Mar 17 22:52:34.544 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.544 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.544 2023 : SlItControllerExplorer::explore - Issuing SL_GET_CTRL_LIST to SLIT - retCode:0x0
+Fri Mar 17 22:52:34.544 2023 : SlItControllerExplorer::explore - Controller count:1
+Fri Mar 17 22:52:34.544 2023 : SlItControllerExplorer::explore - Controller count index:0
+Fri Mar 17 22:52:34.544 2023 : SlItControllerExplorer::explore - Issuing SL_GET_PCI_INFO to SLIT
+Fri Mar 17 22:52:34.544 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.545 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.545 2023 : SlItControllerExplorer::explore - Issuing SL_GET_PCI_INFO to SLIT - retCode:0x0
+Fri Mar 17 22:52:34.545 2023 : SlItControllerExplorer::explore - Domain:0 Bus:24 device:0 Function:0
+Fri Mar 17 22:52:34.545 2023 : SlItControllerExplorer::explore - Issuing SL_GET_CTRL_INFO to SLIT
+Fri Mar 17 22:52:34.545 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.545 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.545 2023 : SlItControllerExplorer::explore - Issuing SL_GET_CTRL_INFO to SLIT - retCode:0x0
+Fri Mar 17 22:52:34.545 2023 : SlItControllerExplorer::explore - Adapter is good
+Fri Mar 17 22:52:34.545 2023 : LinuxMfiDataProvider::fireIoctl DCMD=1010000 mbox.w[0]=1 mbox.w[1]=0 mbox.w[2]=0
+Fri Mar 17 22:52:34.545 2023 : LinuxMfiDataProvider::fireIoctl send_ioctl retcode=-1 cmdStatus=255
+Fri Mar 17 22:52:34.545 2023 : LinuxMfiDataProvider::fireIoctl returning with =-1 errno=9
+Fri Mar 17 22:52:34.545 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.545 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.545 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.545 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.546 2023 : Entering MWCliRootCp::process ver=007.1804.0000.0000 Apr 09, 2021 copyright=2021
+Fri Mar 17 22:52:34.546 2023 : initializing the RaidManager Instance 
+Fri Mar 17 22:52:34.547 2023 : Entering ITSwCtPrCp::process
+Fri Mar 17 22:52:34.547 2023 : ITSwCtPrCp::process - Retreiving basic controller info
+Fri Mar 17 22:52:34.547 2023 : Entering ITSwCtPrCp::getBasicCtrlInfo
+Fri Mar 17 22:52:34.547 2023 : Entering ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.547 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.547 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.547 2023 : Exiting ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.547 2023 : Entering ITSwCtPrCp::getPciInfo
+Fri Mar 17 22:52:34.547 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.548 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.548 2023 : Exiting ITSwCtPrCp::getPciInfo
+Fri Mar 17 22:52:34.548 2023 : Entering ITSwCtPrCp::getDriverInfo
+Fri Mar 17 22:52:34.548 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.548 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.548 2023 : Exiting ITSwCtPrCp::getDriverInfo
+Fri Mar 17 22:52:34.548 2023 : Entering ITUtils::GetManufacturingPage0
+Fri Mar 17 22:52:34.548 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.548 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.548 2023 : Exiting ITUtils::GetManufacturingPage0
+Fri Mar 17 22:52:34.548 2023 : ITUtils::isPlatformSecSupported - Getting controller information...
+Fri Mar 17 22:52:34.548 2023 : Entering ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.548 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.548 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.548 2023 : Exiting ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.548 2023 : ITUtils::isPlatformSecSupported - getSlCtrlInfo retCode:0
+Fri Mar 17 22:52:34.548 2023 : Exiting ITSwCtPrCp::getBasicCtrlInfo
+Fri Mar 17 22:52:34.548 2023 : ITSwCtPrCp::process - Retreiving drive information
+Fri Mar 17 22:52:34.548 2023 : Entering ITSwCtPrCp::getPdInfoTable
+Fri Mar 17 22:52:34.548 2023 : Entering ITUtils::GetPdList
+Fri Mar 17 22:52:34.548 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.548 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.548 2023 : Exiting ITUtils::GetPdList
+Fri Mar 17 22:52:34.548 2023 : Entering ITSwCtPrCp::createSortedPdData
+Fri Mar 17 22:52:34.548 2023 : Exiting ITSwCtPrCp::createSortedPdData
+Fri Mar 17 22:52:34.548 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.548 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.548 2023 : Entering ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.548 2023 : Entering ITUtils::getPdInfo for devid=0
+Fri Mar 17 22:52:34.548 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.549 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.549 2023 : Exiting ITUtils::getPdInfo
+Fri Mar 17 22:52:34.549 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Fri Mar 17 22:52:34.549 2023 : Entering ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.549 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.549 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.549 2023 : Exiting ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.549 2023 : Exiting ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.549 2023 : Entering ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.549 2023 : Entering ITUtils::getPdInfo for devid=5
+Fri Mar 17 22:52:34.549 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.549 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.549 2023 : Exiting ITUtils::getPdInfo
+Fri Mar 17 22:52:34.549 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Fri Mar 17 22:52:34.549 2023 : Entering ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.549 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.550 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.550 2023 : Exiting ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.550 2023 : Exiting ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.550 2023 : Entering ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.550 2023 : Entering ITUtils::getPdInfo for devid=8
+Fri Mar 17 22:52:34.550 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.550 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.550 2023 : Exiting ITUtils::getPdInfo
+Fri Mar 17 22:52:34.550 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Fri Mar 17 22:52:34.550 2023 : Entering ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.550 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.550 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.550 2023 : Exiting ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.550 2023 : Exiting ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.551 2023 : Entering ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.551 2023 : Entering ITUtils::getPdInfo for devid=4
+Fri Mar 17 22:52:34.551 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.551 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.551 2023 : Exiting ITUtils::getPdInfo
+Fri Mar 17 22:52:34.551 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Fri Mar 17 22:52:34.551 2023 : Entering ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.551 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.551 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.551 2023 : Exiting ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.551 2023 : Exiting ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.551 2023 : Entering ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.551 2023 : Entering ITUtils::getPdInfo for devid=3
+Fri Mar 17 22:52:34.551 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.552 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.552 2023 : Exiting ITUtils::getPdInfo
+Fri Mar 17 22:52:34.552 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Fri Mar 17 22:52:34.552 2023 : Entering ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.552 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.552 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.552 2023 : Exiting ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.552 2023 : Exiting ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.552 2023 : Entering ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.552 2023 : Entering ITUtils::getPdInfo for devid=1
+Fri Mar 17 22:52:34.552 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.553 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.553 2023 : Exiting ITUtils::getPdInfo
+Fri Mar 17 22:52:34.553 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Fri Mar 17 22:52:34.553 2023 : Entering ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.553 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.553 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.553 2023 : Exiting ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.553 2023 : Exiting ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.553 2023 : Entering ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.553 2023 : Entering ITUtils::getPdInfo for devid=7
+Fri Mar 17 22:52:34.553 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.554 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.554 2023 : Exiting ITUtils::getPdInfo
+Fri Mar 17 22:52:34.554 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Fri Mar 17 22:52:34.554 2023 : Entering ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.554 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.554 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.554 2023 : Exiting ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.554 2023 : Exiting ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.554 2023 : Entering ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.554 2023 : Entering ITUtils::getPdInfo for devid=6
+Fri Mar 17 22:52:34.554 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.554 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.554 2023 : Exiting ITUtils::getPdInfo
+Fri Mar 17 22:52:34.554 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Fri Mar 17 22:52:34.554 2023 : Entering ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.554 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.555 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.555 2023 : Exiting ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.555 2023 : Exiting ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.555 2023 : Entering ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.555 2023 : Entering ITUtils::getPdInfo for devid=2
+Fri Mar 17 22:52:34.555 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.555 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.555 2023 : Exiting ITUtils::getPdInfo
+Fri Mar 17 22:52:34.555 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Fri Mar 17 22:52:34.555 2023 : Entering ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.555 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:34.556 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:34.556 2023 : Exiting ITUtils::getSlCtrlInfo
+Fri Mar 17 22:52:34.556 2023 : Exiting ITUtils::slGetPdInfo
+Fri Mar 17 22:52:34.556 2023 : Exiting ITSwCtPrCp::process
+Fri Mar 17 22:52:34.556 2023 : MWCliRootCp::process processed for subtokenID=12 errorCode=0
+Fri Mar 17 22:52:34.556 2023 : Entering MWCliRootCp::handleOuput retCode=0, DriveFull=0
+Fri Mar 17 22:52:34.556 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:36.546 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:36.546 2023 : StorelibItDp::processLibCommand SL request sent
+Fri Mar 17 22:52:36.546 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Fri Mar 17 22:52:36.546 2023 : CtMain::main command completed with retcode=0
+
+Sat Mar 18 15:58:05.971 2023 : CtMain::main processing for command=/ c 0 sholsw 
+Sat Mar 18 15:58:05.972 2023 : Entering MWCliRootCp::process ver=007.1804.0000.0000 Apr 09, 2021 copyright=2021
+Sat Mar 18 15:58:05.972 2023 : Entering HelpCp::process 
+Sat Mar 18 15:58:05.972 2023 : MWCliRootCp::process processed for subtokenID=1 errorCode=-1
+Sat Mar 18 15:58:05.972 2023 : Entering MWCliRootCp::handleOuput retCode=-1, DriveFull=0
+Sat Mar 18 15:58:05.972 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 15:58:05.994 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 15:58:05.994 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 15:58:05.997 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 15:58:05.997 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 15:58:05.998 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 15:58:05.998 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 15:58:05.998 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 15:58:05.998 2023 : CtMain::main command completed with retcode=255
+
+Sat Mar 18 18:27:30.163 2023 : CtMain::main processing for command=/ c 0 show 
+Sat Mar 18 18:27:30.163 2023 : Entering LinuxControllerExplorer::explore 
+Sat Mar 18 18:27:30.163 2023 : Entering LinuxControllerExplorer::getCtrlCount
+Sat Mar 18 18:27:30.163 2023 : LinuxControllerExplorer::getCtrlCount _hDvr=-1 _hDvrSwr =-1
+Sat Mar 18 18:27:30.163 2023 : LinuxControllerExplorer::explore ctrlCount=1
+Sat Mar 18 18:27:30.163 2023 : returning LinuxControllerExplorer::explore ctrlIdListPtr
+Sat Mar 18 18:27:30.163 2023 : SlItControllerExplorer::explore - Entering
+Sat Mar 18 18:27:30.163 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.164 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.164 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.164 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.164 2023 : SlItControllerExplorer::explore - Getting the StoreLIB instance for SAS3.5 IT controller
+Sat Mar 18 18:27:30.164 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.186 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.186 2023 : SlItControllerExplorer::explore - Issuing SL_GET_CTRL_LIST to SLIT
+Sat Mar 18 18:27:30.186 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.186 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.186 2023 : SlItControllerExplorer::explore - Issuing SL_GET_CTRL_LIST to SLIT - retCode:0x0
+Sat Mar 18 18:27:30.186 2023 : SlItControllerExplorer::explore - Controller count:1
+Sat Mar 18 18:27:30.186 2023 : SlItControllerExplorer::explore - Controller count index:0
+Sat Mar 18 18:27:30.186 2023 : SlItControllerExplorer::explore - Issuing SL_GET_PCI_INFO to SLIT
+Sat Mar 18 18:27:30.186 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.187 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.187 2023 : SlItControllerExplorer::explore - Issuing SL_GET_PCI_INFO to SLIT - retCode:0x0
+Sat Mar 18 18:27:30.187 2023 : SlItControllerExplorer::explore - Domain:0 Bus:24 device:0 Function:0
+Sat Mar 18 18:27:30.187 2023 : SlItControllerExplorer::explore - Issuing SL_GET_CTRL_INFO to SLIT
+Sat Mar 18 18:27:30.187 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.187 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.187 2023 : SlItControllerExplorer::explore - Issuing SL_GET_CTRL_INFO to SLIT - retCode:0x0
+Sat Mar 18 18:27:30.187 2023 : SlItControllerExplorer::explore - Adapter is good
+Sat Mar 18 18:27:30.187 2023 : LinuxMfiDataProvider::fireIoctl DCMD=1010000 mbox.w[0]=1 mbox.w[1]=0 mbox.w[2]=0
+Sat Mar 18 18:27:30.187 2023 : LinuxMfiDataProvider::fireIoctl send_ioctl retcode=-1 cmdStatus=255
+Sat Mar 18 18:27:30.187 2023 : LinuxMfiDataProvider::fireIoctl returning with =-1 errno=9
+Sat Mar 18 18:27:30.187 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.188 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.188 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.188 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.189 2023 : Entering MWCliRootCp::process ver=007.1804.0000.0000 Apr 09, 2021 copyright=2021
+Sat Mar 18 18:27:30.189 2023 : initializing the RaidManager Instance 
+Sat Mar 18 18:27:30.189 2023 : Entering ITSwCtPrCp::process
+Sat Mar 18 18:27:30.189 2023 : ITSwCtPrCp::process - Retreiving basic controller info
+Sat Mar 18 18:27:30.189 2023 : Entering ITSwCtPrCp::getBasicCtrlInfo
+Sat Mar 18 18:27:30.189 2023 : Entering ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.189 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.189 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.189 2023 : Exiting ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.189 2023 : Entering ITSwCtPrCp::getPciInfo
+Sat Mar 18 18:27:30.189 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.190 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.190 2023 : Exiting ITSwCtPrCp::getPciInfo
+Sat Mar 18 18:27:30.190 2023 : Entering ITSwCtPrCp::getDriverInfo
+Sat Mar 18 18:27:30.190 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.190 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.190 2023 : Exiting ITSwCtPrCp::getDriverInfo
+Sat Mar 18 18:27:30.190 2023 : Entering ITUtils::GetManufacturingPage0
+Sat Mar 18 18:27:30.190 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.190 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.190 2023 : Exiting ITUtils::GetManufacturingPage0
+Sat Mar 18 18:27:30.190 2023 : ITUtils::isPlatformSecSupported - Getting controller information...
+Sat Mar 18 18:27:30.190 2023 : Entering ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.190 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.190 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.190 2023 : Exiting ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.190 2023 : ITUtils::isPlatformSecSupported - getSlCtrlInfo retCode:0
+Sat Mar 18 18:27:30.190 2023 : Exiting ITSwCtPrCp::getBasicCtrlInfo
+Sat Mar 18 18:27:30.190 2023 : ITSwCtPrCp::process - Retreiving drive information
+Sat Mar 18 18:27:30.190 2023 : Entering ITSwCtPrCp::getPdInfoTable
+Sat Mar 18 18:27:30.190 2023 : Entering ITUtils::GetPdList
+Sat Mar 18 18:27:30.190 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.190 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.190 2023 : Exiting ITUtils::GetPdList
+Sat Mar 18 18:27:30.190 2023 : Entering ITSwCtPrCp::createSortedPdData
+Sat Mar 18 18:27:30.190 2023 : Exiting ITSwCtPrCp::createSortedPdData
+Sat Mar 18 18:27:30.190 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.190 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.190 2023 : Entering ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.190 2023 : Entering ITUtils::getPdInfo for devid=0
+Sat Mar 18 18:27:30.190 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.190 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.190 2023 : Exiting ITUtils::getPdInfo
+Sat Mar 18 18:27:30.190 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Mar 18 18:27:30.190 2023 : Entering ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.190 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.191 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.191 2023 : Exiting ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.191 2023 : Exiting ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.191 2023 : Entering ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.191 2023 : Entering ITUtils::getPdInfo for devid=5
+Sat Mar 18 18:27:30.191 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.191 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.191 2023 : Exiting ITUtils::getPdInfo
+Sat Mar 18 18:27:30.191 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Mar 18 18:27:30.191 2023 : Entering ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.191 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.192 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.192 2023 : Exiting ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.192 2023 : Exiting ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.192 2023 : Entering ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.192 2023 : Entering ITUtils::getPdInfo for devid=8
+Sat Mar 18 18:27:30.192 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.192 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.192 2023 : Exiting ITUtils::getPdInfo
+Sat Mar 18 18:27:30.192 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Mar 18 18:27:30.192 2023 : Entering ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.192 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.192 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.192 2023 : Exiting ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.192 2023 : Exiting ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.192 2023 : Entering ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.192 2023 : Entering ITUtils::getPdInfo for devid=4
+Sat Mar 18 18:27:30.192 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.193 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.193 2023 : Exiting ITUtils::getPdInfo
+Sat Mar 18 18:27:30.193 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Mar 18 18:27:30.193 2023 : Entering ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.193 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.193 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.193 2023 : Exiting ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.193 2023 : Exiting ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.193 2023 : Entering ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.193 2023 : Entering ITUtils::getPdInfo for devid=3
+Sat Mar 18 18:27:30.193 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.194 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.194 2023 : Exiting ITUtils::getPdInfo
+Sat Mar 18 18:27:30.194 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Mar 18 18:27:30.194 2023 : Entering ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.194 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.194 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.194 2023 : Exiting ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.194 2023 : Exiting ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.194 2023 : Entering ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.194 2023 : Entering ITUtils::getPdInfo for devid=1
+Sat Mar 18 18:27:30.194 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.195 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.195 2023 : Exiting ITUtils::getPdInfo
+Sat Mar 18 18:27:30.195 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Mar 18 18:27:30.195 2023 : Entering ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.195 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.195 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.195 2023 : Exiting ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.195 2023 : Exiting ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.195 2023 : Entering ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.195 2023 : Entering ITUtils::getPdInfo for devid=7
+Sat Mar 18 18:27:30.195 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.195 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.195 2023 : Exiting ITUtils::getPdInfo
+Sat Mar 18 18:27:30.195 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Mar 18 18:27:30.195 2023 : Entering ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.195 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.196 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.196 2023 : Exiting ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.196 2023 : Exiting ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.196 2023 : Entering ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.196 2023 : Entering ITUtils::getPdInfo for devid=6
+Sat Mar 18 18:27:30.196 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.196 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.196 2023 : Exiting ITUtils::getPdInfo
+Sat Mar 18 18:27:30.196 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Mar 18 18:27:30.196 2023 : Entering ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.196 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.197 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.197 2023 : Exiting ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.197 2023 : Exiting ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.197 2023 : Entering ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.197 2023 : Entering ITUtils::getPdInfo for devid=2
+Sat Mar 18 18:27:30.197 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.197 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.197 2023 : Exiting ITUtils::getPdInfo
+Sat Mar 18 18:27:30.197 2023 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Mar 18 18:27:30.197 2023 : Entering ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.197 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.197 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.197 2023 : Exiting ITUtils::getSlCtrlInfo
+Sat Mar 18 18:27:30.197 2023 : Exiting ITUtils::slGetPdInfo
+Sat Mar 18 18:27:30.198 2023 : Exiting ITSwCtPrCp::process
+Sat Mar 18 18:27:30.198 2023 : MWCliRootCp::process processed for subtokenID=12 errorCode=0
+Sat Mar 18 18:27:30.198 2023 : Entering MWCliRootCp::handleOuput retCode=0, DriveFull=0
+Sat Mar 18 18:27:30.198 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.201 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.201 2023 : StorelibItDp::processLibCommand SL request sent
+Sat Mar 18 18:27:30.201 2023 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Mar 18 18:27:30.201 2023 : CtMain::main command completed with retcode=0
+
