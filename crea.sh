@@ -1,4 +1,4 @@
-for((i=17;i<69;i++));
+for((i=0;i<46;i++));
 do
-	touch $i
+	touch ./mnt/$i
 done

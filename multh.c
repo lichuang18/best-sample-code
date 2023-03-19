@@ -11,8 +11,8 @@
 #include <numa.h>
 #include <sched.h>
 
-#define DEBUG 1
-#define SINGLE 1
+#define DEBUG 0
+#define SINGLE 0
 
 #define MEMBUF_SIZE 1024*1024*1024  //分配的内存大小
 #define NUM_FOR 1000   //循环测试次数
@@ -212,8 +212,7 @@ int main(int argc , char **argv){
     float pth_avg_time = total_time/threads;
     float IOPS=1000000/pth_avg_time;
 
-    printf("threads:%d,iosize:%d K,IOPS:%f,performance:%f MB/s,pth-avg-time:%f\n",threads,io_size/1024,IOPS,IOPS*io_size/1024/1024,pth_avg_time);
+    printf("0th 线程的延迟为:%fus,threads:%d,iosize:%d K,IOPS:%f,performance:%f MB/s,pth-avg-time:%f\n",sum_ths_time[0],threads,io_size/1024,IOPS,IOPS*io_size/1024/1024,pth_avg_time);
     //输出0线程的延迟
-    printf("0th 线程的延迟为:%fus\n",sum_ths_time[0]);
     return 0;
 }
