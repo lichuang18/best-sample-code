@@ -15,7 +15,7 @@
 #define SINGLE 0
 
 #define MEMBUF_SIZE 1024*1024*1024  //分配的内存大小
-#define NUM_FOR 1000   //循环测试次数
+#define NUM_FOR 10   //循环测试次数
 #define MAX_THREADS 128
 static int SYNC_FLAG=0;//多线程初始完毕标志
 static int INIT_C[MAX_THREADS]={0};//多线程初始化完成标志
@@ -26,6 +26,7 @@ struct mypara
     int icore;//绑核
     int offset;
     int io_size;
+    int threads;
 };
 
 
@@ -59,7 +60,7 @@ void *new_func(void *para)
     int y=sched_getcpu();
     if(DEBUG)//打印设置的CPU亲和性信息
     {
-        printf("current th run on cpu:%d\n",y);
+        printf("current th[%d] run on cpu:%d\n",ptr->icore,y);
     }
 
     //初始化之 numa
@@ -80,11 +81,12 @@ void *new_func(void *para)
     int th_fd;
     char th_path[50];
     sprintf(th_path, "./mnt/%d",ptr->icore+1);
-    if( (th_fd = open(th_path, O_RDWR|O_DIRECT))< 0){ 
+    //if( (th_fd = open(th_path, O_RDWR|O_DIRECT))< 0){ //|O_DIRECT
+    if( (th_fd = open("/dev/sdg", O_RDWR|O_DIRECT))< 0){
         printf("th_open %dth failed \n",ptr->icore+1);
         exit(0);
     }
-    if(DEBUG) printf("%s\n", th_path);
+    if(DEBUG) printf("current file path : %s\n", th_path);
     
     //线程初始化完成，INTT_C[ptr->icore]赋值为1
     INIT_C[ptr->icore]=1;
@@ -102,12 +104,13 @@ void *new_func(void *para)
     gettimeofday(&start, NULL);
     for(int i=0;i<NUM_FOR;i++)
     {
-        int ret = pwrite(th_fd,thbuf,ptr->io_size,0+i*ptr->io_size);//写到pagecache，用户态请求到pagecache
+        //int ret = pwrite(th_fd,thbuf,ptr->io_size,0+ptr->io_size*i+ptr->icore*ptr->io_size*NUM_FOR);//写到pagecache，用户态请求到pagecache
+        int ret = write(th_fd,thbuf,ptr->io_size);
         if(ret<0) 
         {
-            printf("th_pwrite faild\n");
+            printf("th_write faild\n");
         }
-        //fsync(th_fd);//刷回到盘，pagecache到盘
+        fsync(th_fd);//刷回到盘，pagecache到盘
     }
     gettimeofday(&end, NULL);
     int th_speedtime = (end.tv_sec * 1000000 + end.tv_usec) - (start.tv_sec * 1000000 + start.tv_usec);
@@ -149,7 +152,8 @@ void Single_test(int threads, int io_size)
     memset(numa_membuf, 0, MEMBUF_SIZE);//初始化，避免缺页中断影响
     int fd;
     //if( (fd=open("/dev/sdf", O_RDWR|O_DIRECT|O_SYNC))< 0){  //BLOCK测试
-    if( (fd=open("./mnt/0", O_RDWR|O_DIRECT))< 0){ 
+    //if( (fd=open("./mnt/0", O_RDWR|O_DIRECT))< 0){ //|O_DIRECT
+    if( (fd = open("/dev/sdg", O_RDWR|O_DIRECT))< 0){
         exit(0);
     }
     struct timeval start1,end1;
@@ -158,12 +162,13 @@ void Single_test(int threads, int io_size)
     gettimeofday(&start1, NULL);
     for(int i=0;i<NUM_FOR;i++)
     {
-        int ret = pwrite(fd,numa_membuf,io_size,0+i*io_size);//写到pagecache，用户态请求到pagecache
+        //int ret = pwrite(fd,numa_membuf,io_size,0+i*io_size);//写到pagecache，用户态请求到pagecache
+        int ret = write(fd,numa_membuf,io_size);
         if(ret<0) 
         {
-            printf("single pwrite faild\n");
+            printf("single write faild\n");
         }
-        //fsync(fd);//刷回到盘，pagecache到盘
+        fsync(fd);//刷回到盘，pagecache到盘
     }
     gettimeofday(&end1, NULL);
     int speedtime = (end1.tv_sec * 1000000 + end1.tv_usec) - (start1.tv_sec * 1000000 + start1.tv_usec);
@@ -188,6 +193,7 @@ int main(int argc , char **argv){
     {
         ptr[i].icore=i;
         ptr[i].io_size=io_size;
+        ptr[i].threads=threads;
         pthread_create(&th[i],NULL,new_func,&(ptr[i]));    
     }
 
@@ -199,20 +205,34 @@ int main(int argc , char **argv){
     }while(init_count != threads);
     if(DEBUG) printf("OK now已完成初始化的线程数量是：%d, and threads is: %d\n",init_count, threads);
     SYNC_FLAG=1;//多线程全部初始化完毕，才开始执行写操作
+
+
+    struct timeval start1,end1;
+    float mul_time=0;
+
+    gettimeofday(&start1, NULL);
+
     for (int i=0 ;i<threads;i++)
     {
         pthread_join(th[i],NULL);
     } 
+    gettimeofday(&end1, NULL);
+    int speedtime = (end1.tv_sec * 1000000 + end1.tv_usec) - (start1.tv_sec * 1000000 + start1.tv_usec);
+    mul_time = (float)speedtime;//统计total时间开销   总的写入量：NUM_FOR*io_size*threads/1024 MB
+    float total_size=NUM_FOR*threads;
+    //printf("mul_time: %f avg :%f final IOPS:%f\n",mul_time/NUM_FOR,mul_time/threads/NUM_FOR,total_size*1000000/mul_time);
+
+
     //多线程全部执行完毕，统计时间
     float total_time = 0;
     for(int i = 0; i<threads; i++)
     {
         total_time = total_time + sum_ths_time[i];
     }
-    float pth_avg_time = total_time/threads;
+    float pth_avg_time = total_time/threads;//  单次4k的开销
     float IOPS=1000000/pth_avg_time;
 
-    printf("0th 线程的延迟为:%fus,threads:%d,iosize:%d K,IOPS:%f,performance:%f MB/s,pth-avg-time:%f\n",sum_ths_time[0],threads,io_size/1024,IOPS,IOPS*io_size/1024/1024,pth_avg_time);
+    printf("0th 线程的写延迟为:%fus,threads:%d,iosize:%d K,IOPS:%f,performance:%f MB/s,pth-avg-time:%f\n",sum_ths_time[0],threads,io_size/1024,total_size*1000000/mul_time,total_size*1000000/mul_time*io_size/1024/1024,pth_avg_time);
     //输出0线程的延迟
     return 0;
 }
