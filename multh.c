@@ -15,7 +15,7 @@
 #define SINGLE 0
 
 #define MEMBUF_SIZE 1024*1024*1024  //分配的内存大小
-#define NUM_FOR 10   //循环测试次数
+#define NUM_FOR 1000   //循环测试次数
 #define MAX_THREADS 128
 static int SYNC_FLAG=0;//多线程初始完毕标志
 static int INIT_C[MAX_THREADS]={0};//多线程初始化完成标志
@@ -80,9 +80,9 @@ void *new_func(void *para)
     memset(thbuf,0,MEMBUF_SIZE);//初始化，避免缺页中断影响
     int th_fd;
     char th_path[50];
-    sprintf(th_path, "./mnt/%d",ptr->icore+1);
+    sprintf(th_path, "/dev/nvme0n1p%d",ptr->icore+1);
     //if( (th_fd = open(th_path, O_RDWR|O_DIRECT))< 0){ //|O_DIRECT
-    if( (th_fd = open("/dev/sdg", O_RDWR|O_DIRECT))< 0){
+    if( (th_fd = open("/dev/nvme0n1", O_RDWR|O_DIRECT))< 0){
         printf("th_open %dth failed \n",ptr->icore+1);
         exit(0);
     }
@@ -104,12 +104,13 @@ void *new_func(void *para)
     gettimeofday(&start, NULL);
     for(int i=0;i<NUM_FOR;i++)
     {
-        int ret = pwrite(th_fd,thbuf,ptr->io_size,0+ptr->io_size*i+ptr->icore*ptr->io_size*NUM_FOR);//写到pagecache，用户态请求到pagecache
-        if(ret<0) 
+        //int ret = pwrite(th_fd,thbuf,ptr->io_size,0+ptr->io_size*i+ptr->icore*ptr->io_size*NUM_FOR);//写到pagecache，用户态请求到pagecache
+        int ret = pwrite(th_fd,thbuf,ptr->io_size,0+ptr->io_size*i);
+	if(ret<0) 
         {
             printf("th_pwrite faild\n");
         }
-        //fsync(th_fd);//刷回到盘，pagecache到盘
+        fsync(th_fd);//刷回到盘，pagecache到盘
     }
     gettimeofday(&end, NULL);
     int th_speedtime = (end.tv_sec * 1000000 + end.tv_usec) - (start.tv_sec * 1000000 + start.tv_usec);
@@ -152,7 +153,7 @@ void Single_test(int threads, int io_size)
     int fd;
     //if( (fd=open("/dev/sdf", O_RDWR|O_DIRECT|O_SYNC))< 0){  //BLOCK测试
     //if( (fd=open("./mnt/0", O_RDWR|O_DIRECT))< 0){ //|O_DIRECT
-    if( (fd = open("/dev/sdg", O_RDWR|O_DIRECT))< 0){
+    if( (fd = open("/dev/nvme0n1", O_RDWR|O_DIRECT))< 0){ //|O_DIRECT
         exit(0);
     }
     struct timeval start1,end1;
